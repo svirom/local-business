@@ -1,0 +1,8 @@
+/*
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+!/wp-content/plugins
+/wp-content/themes/index.php
+/wp-content/themes/twenty*
+!.gitignore
