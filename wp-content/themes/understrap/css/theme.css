@@ -15085,6 +15085,8 @@ figure.woocommerce-product-gallery__wrapper {
   top: 0;
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .business-card:hover {
@@ -15094,6 +15096,8 @@ figure.woocommerce-product-gallery__wrapper {
 
 .business-card:hover:after {
   background-color: rgba(0, 0, 0, 0.85);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .business-card .business-title {
@@ -15136,6 +15140,93 @@ figure.woocommerce-product-gallery__wrapper {
 
 .business-card .business-street {
   line-height: 1.2;
+}
+
+.category-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  -webkit-box-shadow: 6px 7px 20px #dddddd;
+          box-shadow: 6px 7px 20px #dddddd;
+}
+
+.category-card h3 {
+  margin-bottom: 0;
+}
+
+.category-card a {
+  padding: 6px 20px;
+  border: 1px solid #ebedee;
+  color: #5F9EA0;
+  -webkit-box-shadow: 1px 1px 2px 1px #5F9EA0;
+          box-shadow: 1px 1px 2px 1px #5F9EA0;
+}
+
+.places-article {
+  padding-top: 2.5rem;
+}
+
+.places-article .places-logo {
+  padding-bottom: 0.75rem;
+}
+
+.places-article .places-logo img {
+  max-width: 160px;
+}
+
+.places-article .entry-content {
+  max-width: 767px;
+  margin: 2rem auto 4.5rem;
+}
+
+.certificate-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 20rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.certificate-card .certificate-title {
+  margin-bottom: 1.75rem;
+  font-size: 2rem;
+}
+
+.certificate-card .certificate-description {
+  line-height: 1.2;
+}
+
+.certificate-card .certificate-cost {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.certificate-card .certificate-order {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #0070A0;
+  font-weight: 500;
+  background-color: #ffffff;
 }
 
 /*

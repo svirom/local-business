@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying all single posts
+ * 
+ * 
  *
  * @package understrap
  */
@@ -12,31 +13,63 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper coffee-shop" id="single-wrapper">
+<div class="wrapper single-places" id="single-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
+			<div class="col-12">
 
-			<main class="site-main" id="main">
+				<main class="site-main" id="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
+					<article <?php post_class('text-center places-article'); ?> id="post-<?php the_ID(); ?>">
+						<header class="entry-header">
+							<div class="places-logo">
+								<img src="<?php echo get_field('logo'); ?>">
+							</div>
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						</header><!-- .entry-header -->
 
-					<?php understrap_post_nav(); ?>
+						<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+						<div class="entry-content">
+							<?php the_content(); ?>
+						</div><!-- .entry-content -->
 
-				<?php endwhile; // end of the loop. ?>
+						<footer class="entry-footer">
+							<div class="row justify-content-center">
+							<?php
+								// var_dump(get_fields());
+								$single_fields = get_fields();
+								foreach($single_fields as $single_field) {
+									if (is_array($single_field)) {
+										foreach($single_field as $cert) {	?>
+											<div class="col-md-3">
+												<div class="certificate-card" style="background-color: <?php echo $cert['certificate_background']; ?>">
+													<div class="certificate-body">
+														<h3 class="certificate-title"><?php echo $cert['certificate_title']; ?></h3>
+														<p class="certificate-description"><?php echo $cert['certificate_description']; ?></p>
+													</div>
+													<div class="certificate-footer">
+														<p class="certificate-cost"><?php echo $cert['certificate_cost']; ?>  <?php echo _e('грн.', 'understrap'); ?></p>
+														<a class="certificate-order" href="<?php echo $cert['certificate_order']; ?>"><?php echo _e('Придбати', 'understrap'); ?></a>
+													</div>
+												</div>
+											</div>
+										<?php }
+									}
+								} ?>
+							</div>
+						</footer><!-- .entry-footer -->
+					</article><!-- #post-## -->
 
-			</main><!-- #main -->
+					<?php endwhile; // end of the loop. ?>
+					
+				</main><!-- #main -->
 
+			</div>
 		</div><!-- .row -->
 
 	</div><!-- #content -->

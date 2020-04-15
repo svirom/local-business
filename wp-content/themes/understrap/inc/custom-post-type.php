@@ -10,7 +10,7 @@ add_action('init', 'create_post_type_places');
 function create_post_type_places()
 {
 	register_taxonomy_for_object_type('category', 'places'); // Register Taxonomies for Category
-	register_taxonomy_for_object_type('post_tag', 'places');
+	// register_taxonomy_for_object_type('post_tag', 'places');
 	register_post_type('places', // Register Custom Post Type
 		array(
 		'labels' => array(
@@ -29,13 +29,13 @@ function create_post_type_places()
 			'not_found' => __('Заклад не знайдено', 'understrap'),
 			'not_found_in_trash' => __('Немає закладу у кошику', 'understrap')
 		),
+		'menu_icon' => 'dashicons-admin-multisite',
 		'public' => true,
 		'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
 		'has_archive' => true,
 		'supports' => array(
 			'title',
       'thumbnail',
-			'comments',
 			'editor'
 		), // Go to Dashboard Location post for supports
 		'can_export' => true, // Allows export in Tools > Export

@@ -19,6 +19,7 @@
     top: 0;
     border-radius: 0.5rem;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
   }
 
   &:hover {
@@ -27,6 +28,7 @@
 
     &:after {
       background-color: rgba(0, 0, 0, 0.85);
+      transition: 0.5s;
     }
   }
 
@@ -49,7 +51,7 @@
     align-items: center;
   }
 
-  .business-city{
+  .business-city {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1;
@@ -59,4 +61,81 @@
     line-height: 1.2;
   }
 
+}
+
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  // border: 2px solid #a18cd1;
+  box-shadow: 6px 7px 20px #dddddd;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  a {
+    padding: 6px 20px;
+    // border: 1px solid #a18cd1;
+    border: 1px solid #ebedee;
+    // color: #ffffff;
+    color: #5F9EA0;
+    box-shadow: 1px 1px 2px 1px #5F9EA0;
+    // background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+}
+
+.places-article {
+  padding-top: 2.5rem;
+
+  .places-logo {
+    padding-bottom: 0.75rem;
+
+    img {
+      max-width: 160px;
+    }
+  }
+
+  .entry-content {
+    max-width: 767px;
+    margin: 2rem auto 4.5rem;
+  }
+}
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: flex-start;
+  height: 20rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  color: #ffffff;
+
+  .certificate-title {
+    margin-bottom: 1.75rem;
+    font-size: 2rem;
+  }
+
+  .certificate-description {
+    line-height: 1.2;
+  }
+
+  .certificate-cost {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .certificate-order {
+    display: block;    
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #0070A0;
+    font-weight: 500;
+    background-color: #ffffff;
+  }
 }
