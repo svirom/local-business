@@ -30,6 +30,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<img src="<?php echo get_field('logo'); ?>">
 							</div>
 							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+							<?php if (null !== get_field('address_web')) {?>
+								<p class="places-web"><?php _e('Веб-сайт', 'understrap'); ?>: <a href="<?php echo get_field('address_web'); ?>"><?php echo get_field('address_web'); ?></a></p>
+							<?php } ?>
 						</header><!-- .entry-header -->
 
 						<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>

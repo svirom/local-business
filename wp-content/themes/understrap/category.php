@@ -67,6 +67,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php endif; ?>
 
           </div>
+
+          <?php  @require 'map.php'; ?>
+
         </main><!-- #main -->
 
       </div>
