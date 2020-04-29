@@ -177,11 +177,6 @@ $container = get_theme_mod( 'understrap_container_type' );
       </div>
     </div> -->
 
-    <?php 
-      echo do_shortcode( '[contact-form-7 id="48" title="Contact form 1"]' );
-      // echo do_shortcode( "[RM_Form id='3']" );
-    ?>
-
 	</div><!-- #content -->
 
 </div><!-- #index-wrapper -->

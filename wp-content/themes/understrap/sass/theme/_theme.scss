@@ -160,3 +160,58 @@
     color: #0070A0;
   }
 }
+
+/* Add Place Page */
+.add-place {
+
+  .entry-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .entry-title {
+    text-align: center;
+  }
+}
+
+.wpcf7-form {
+
+  input.wpcf7-form-control, textarea.wpcf7-form-control {
+    width: calc(100% - 40px);
+    margin-bottom: 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 1px solid #d8dff0;
+    box-shadow: 0 3px 7px 0 rgba(216, 223, 240, .5);
+    border-radius: 4px;
+    line-height: 1.2;
+    
+    &.error {
+      border-color: #df1664;
+    }
+  }
+  
+
+  textarea {
+    height: 100px;
+  }
+}
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+  -webkit-appearance: none;
+}
+input:focus, textarea:focus {
+  border-color: #3f48c4;
+  background-color: #fff;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#content {
+  outline: none;
+}
+
+#search-place-map {
+  display: none;
+}

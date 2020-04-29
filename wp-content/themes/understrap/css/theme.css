@@ -15065,6 +15065,37 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+/*
+* Use existing Bootstrap 4 classes and
+* variables to extend - override CF7 style
+*
+* Useful CF7 classes:
+* .wpcf7 the wrapper element
+* .wpcf7-form
+* .wpcf7-form-control
+* .wpcf7-text
+* .wpcf7-email
+* .wpcf7-textarea
+* .wpcf7-submit
+*/
+.wpcf7 {
+  max-width: 600px;
+  margin: 0 auto !important;
+}
+
+.wpcf7 .wpcf7-form label {
+  width: 100%;
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+  color: #dc3545;
+}
+
+.wpcf7 .wpcf7-validation-errors {
+  color: #dc3545;
+  border: 1px solid #e9ecef;
+}
+
 .business-card {
   position: relative;
   display: block;
@@ -15255,34 +15286,53 @@ figure.woocommerce-product-gallery__wrapper {
   color: #0070A0;
 }
 
-/*
-* Use existing Bootstrap 4 classes and
-* variables to extend - override CF7 style
-*
-* Useful CF7 classes:
-* .wpcf7 the wrapper element
-* .wpcf7-form
-* .wpcf7-form-control
-* .wpcf7-text
-* .wpcf7-email
-* .wpcf7-textarea
-* .wpcf7-submit
-*/
-.wpcf7 {
-  max-width: 600px;
-  margin: 0 auto !important;
+/* Add Place Page */
+.add-place .entry-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.wpcf7 .wpcf7-form label {
-  width: 100%;
+.add-place .entry-title {
+  text-align: center;
 }
 
-.wpcf7 .wpcf7-not-valid-tip {
-  color: #dc3545;
+.wpcf7-form input.wpcf7-form-control, .wpcf7-form textarea.wpcf7-form-control {
+  width: calc(100% - 40px);
+  margin-bottom: 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 1px solid #d8dff0;
+  -webkit-box-shadow: 0 3px 7px 0 rgba(216, 223, 240, 0.5);
+          box-shadow: 0 3px 7px 0 rgba(216, 223, 240, 0.5);
+  border-radius: 4px;
+  line-height: 1.2;
 }
 
-.wpcf7 .wpcf7-validation-errors {
-  color: #dc3545;
-  border: 1px solid #e9ecef;
+.wpcf7-form input.wpcf7-form-control.error, .wpcf7-form textarea.wpcf7-form-control.error {
+  border-color: #df1664;
+}
+
+.wpcf7-form textarea {
+  height: 100px;
+}
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+  -webkit-appearance: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #3f48c4;
+  background-color: #fff;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#content {
+  outline: none;
+}
+
+#search-place-map {
+  display: none;
 }
 /*# sourceMappingURL=theme.css.map */
