@@ -1,0 +1,423 @@
+/*
+Theme Name:     Neve Child
+Theme URI:      https://themeisle.com/themes/neve/
+Template: neve
+Author:         ThemeIsle
+Author URI:     https://themeisle.com
+Description:    Neve is a super fast, easily customizable, multi-purpose theme. It’s perfect for blogs, small business, startups, agencies, firms, e-commerce shops (WooCommerce storefront) as well as personal portfolio sites and most types of projects. A fully AMP optimized and responsive theme, Neve will load in mere seconds and adapt perfectly on any viewing device. While it is lightweight and has a minimalist design, the theme is highly extendable, it has a highly SEO optimized code, resulting in top rankings in Google search results. Neve works perfectly with Gutenberg and the most popular page builders (Elementor, Brizy, Beaver Builder, Visual Composer, SiteOrigin, Divi). Neve is also WooCommerce ready, responsive, RTL & translation ready. Look no further. Neve is the perfect theme for you!
+Version:        1.0.0
+License:        GNU General Public License v2 or later
+License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    neve
+Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles
+*/
+
+/*--------------------------
+Header home
+--------------------------*/
+.text-center {
+  text-align: center;
+}
+
+.container-home-wrapper {
+  background-color: #f7f7f7;
+}
+
+.container-fluid > div.header-home-wrapper,
+.container-fluid > div.container-home-wrapper {
+  margin: 0;
+}
+
+.container-home {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.header-home-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.header-home {
+  padding-top: 1.5rem;
+  padding-right: 6rem;
+}
+
+.header-home h1 {
+  margin-bottom: 2rem;
+}
+
+.header-home-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1.25rem;
+}
+
+.btn.btn-primary {
+  padding: 1rem 2rem;
+  border-radius: 2.5rem;;
+  background-color: #ffc42e;
+}
+
+.btn.btn-primary:hover {
+  background-color: #bb9637;
+}
+
+.btn.btn-link {
+  font-size: 1rem;
+  color: #404248;
+  text-transform: none;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.header-img {
+  align-self: center;
+}
+
+.map-title {
+  padding-top: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .header-home {
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header-home-buttons {
+    flex-direction: column;
+  }
+  .btn.btn-primary {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/*--------------------------
+Category card (main page)
+--------------------------*/
+.category-card-wrapper {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.category-card {
+  display: flex;
+  background-color: #fff;
+}
+
+.category-card a {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #0e71e4;
+  text-align: center;
+  font-weight: 600;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.category-card a:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(127,116,99,0.2);
+}
+
+.all-categories {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-decoration: underline;
+}
+
+/*--------------------------
+Map
+--------------------------*/
+.map-wrapper {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+#map {
+  width: 100%;
+  height: 400px; 
+}
+
+.info-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 200px;
+  padding: 0.5rem 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.info-window  a {
+  color: #0070A0;
+}
+
+#search-place-map {
+  display: none;
+}
+
+/*--------------------------
+Bottom form
+--------------------------*/
+.bottom-form-wrapper {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.bottom-form {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.bottom-form-text {
+  padding-top: 1rem;
+}
+
+.bottom-form-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/*--------------------------
+Bottom contact
+--------------------------*/
+.bottom-contact-wrapper {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  background-color: #f7f7f7;
+}
+
+.bottom-left {
+  padding-left: 3rem;
+}
+
+.bottom-right-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom-right {
+  padding-right: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  .bottom-right-wrapper {
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+  }
+  .bottom-right {
+    padding-left: 3rem;
+    padding-right: 1rem;
+  }
+}
+
+/*--------------------------
+Category page
+--------------------------*/
+.category-title {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.business-card-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.business-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 12rem;
+  padding: 1rem;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  background-size: cover;
+}
+
+.business-card::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.5s;
+}
+
+.business-card:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.business-card:hover::after {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: 0.5s;
+}
+
+.business-card .business-title {
+  font-size: 2rem;
+}
+
+.business-card .business-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 1;
+}
+
+.business-card .business-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.business-card .business-city {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.business-card .business-street {
+  line-height: 1.2;
+}
+
+/*--------------------------
+Single place page 
+--------------------------*/
+.places-article {
+  padding-top: 2.5rem;
+  text-align: center;
+}
+
+.places-article .places-logo {
+  padding-bottom: 0.75rem;
+}
+
+.places-article .places-logo img {
+  max-width: 160px;
+}
+
+.places-article .entry-content {
+  max-width: 767px;
+  margin: 2rem auto 4.5rem;
+}
+
+.single-article-footer {
+  padding-bottom: 3rem;
+}
+
+.single-article-footer > .row {
+  justify-content: center;
+}
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.certificate-card .certificate-title {
+  margin-bottom: 1.75rem;
+  font-size: 2rem;
+}
+
+.certificate-card .certificate-description {
+  line-height: 1.2;
+}
+
+.certificate-card .certificate-cost {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.certificate-card .certificate-order {
+  display: block;    
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #0070A0;
+  font-weight: 500;
+  background-color: #ffffff;
+}
+
+/*--------------------------
+Add Place Page
+--------------------------*/
+.add-place  .entry-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.add-place .nv-page-title-wrap.nv-big-title .nv-page-title {
+  text-align: center;
+  border-bottom: none;
+}
+
+.wpcf7 {
+  max-width: 600px;
+  margin: 0 auto !important;
+}
+
+.wpcf7-form label {
+  width: 100%;
+}
+.wpcf7-form input.wpcf7-form-control, 
+.wpcf7-form textarea.wpcf7-form-control {
+  width: calc(100% - 40px);
+  margin-bottom: 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 1px solid #d8dff0;
+  box-shadow: 0 3px 7px 0 rgba(216, 223, 240, .5);
+  border-radius: 4px;
+  line-height: 1.2;
+}   
+.wpcf7-form input.wpcf7-form-control.error, 
+.wpcf7-form textarea.wpcf7-form-control.error {
+  border-color: #df1664;
+}
+
+.wpcf7-form textarea {
+  height: 100px;
+}
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+  -webkit-appearance: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #3f48c4;
+  background-color: #fff;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+

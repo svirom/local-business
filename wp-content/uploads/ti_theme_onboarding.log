@@ -1,0 +1,19 @@
+[12/May/2020:18:33:47] (ℹ️): WordPress Instance Info:
+[12/May/2020:18:33:47] (ℹ️): Home URL : http://local-business.local
+[12/May/2020:18:33:47] (ℹ️): Site URL : http://local-business.local
+[12/May/2020:18:33:47] (ℹ️): WordPress Version : 5.4
+[12/May/2020:18:33:47] (ℹ️): Onboarding Version : 1.8.2
+[12/May/2020:18:33:47] (ℹ️): Multisite : No
+[12/May/2020:18:33:47] (ℹ️): Server Info : Apache/2.4.41 (Win64) PHP/7.2.25
+[12/May/2020:18:33:47] (ℹ️): PHP Version : 7.2.25
+[12/May/2020:18:33:47] (ℹ️): HTTPS : No
+[12/May/2020:18:33:47] (ℹ️): PHP Max Execution Time : 120
+[12/May/2020:18:33:47] (ℹ️): PHP Max Input Vars : 2500
+[12/May/2020:18:33:47] (ℹ️): Max Upload Size : 2097152
+[12/May/2020:18:33:47] (ℹ️): Plugins:
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Advanced Custom Fields: Repeater Field : v2.1.0 (Elliot Condon)
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Advanced CF7 DB : v1.7.2 (Vsourz Digital)
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Додаткові поля Pro : v5.8.9 (Elliot Condon)
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Google Map for Contact Form 7 : v1.4.3 (Aurovrata V.)
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Contact Form 7 : v5.1.7 (Takayuki Miyoshi)
+[12/May/2020:18:33:47] (ℹ️): [PLUGIN] Cyr-To-Lat : v4.4.0 (Сергій Бірюков, Михайло Кобзаров, Ігор Гергель)
