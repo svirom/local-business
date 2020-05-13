@@ -10,8 +10,8 @@ jQuery(function($) {
         'scrollTop': $target.offset().top
           }, 600, 'swing', function() {
       });
-		});
-
+    });
+    
   })
 
 

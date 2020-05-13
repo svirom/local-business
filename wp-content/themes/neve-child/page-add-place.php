@@ -11,9 +11,8 @@ get_header();
 
 ?>
 <div class="add-place <?php echo esc_attr( $container_class ); ?> single-page-container">
-
-		<?php do_action( 'neve_do_sidebar', 'single-page', 'left' ); ?>
-		<div class="nv-single-page-wrap col">
+	<div class="row container-place-wrapper">
+		<div class="nv-single-page-wrap col-12 container-home">
 			<?php
 			do_action( 'neve_before_page_header' );
 			do_action( 'neve_page_header', 'single-page' );
@@ -29,6 +28,9 @@ get_header();
 			do_action( 'neve_after_content', 'single-page' );
 			?>
 		</div>
+	</div>
+
+    <?php require get_stylesheet_directory() .'/content-parts/bottom-contact.php';?>
 
 </div>
 <?php 

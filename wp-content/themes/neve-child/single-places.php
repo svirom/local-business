@@ -13,7 +13,7 @@ get_header();
 ?>
 	<div class="<?php echo esc_attr( $container_class ); ?> single-post-container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 container-home">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,7 +26,7 @@ get_header();
 						<?php if ( esc_url( get_field('address_web') ) ) {?>
 							<p class="places-web"><?php echo __('Веб-сайт', 'neve'); ?>: <a href="<?php echo esc_url( get_field('address_web') ); ?>"><?php echo esc_url( get_field('address_web') ); ?></a></p>
 						<?php } ?>
-					</header><!-- .entry-header -->
+					</header>
 
 					<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
@@ -65,6 +65,10 @@ get_header();
 
 			</div>
 		</div><!-- .row -->
+
+		<?php require get_stylesheet_directory() .'/content-parts/bottom-form.php';?>
+		<?php require get_stylesheet_directory() .'/content-parts/bottom-contact.php';?>
+		
 	</div>
 <?php
  get_footer();
