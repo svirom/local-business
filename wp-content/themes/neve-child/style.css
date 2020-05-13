@@ -20,6 +20,7 @@ Header home
 }
 
 .container-home-wrapper {
+  padding-top: 3rem;
   background-color: #f7f7f7;
 }
 
@@ -76,9 +77,9 @@ Header home
   align-self: center;
 }
 
-.map-title {
+/* .map-title {
   padding-top: 3rem;
-}
+} */
 
 @media screen and (max-width: 992px) {
   .header-home {
@@ -173,6 +174,13 @@ Map
   display: none;
 }
 
+@media screen and (max-width: 576px) {
+  .map-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 /*--------------------------
 Bottom form
 --------------------------*/
@@ -234,12 +242,20 @@ Bottom contact
 Category page
 --------------------------*/
 .category-title {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.container-fluid > div.category-title {
+  margin: 0 auto;
+}
+
+.business-wrapper {
+  padding-top: 1rem;
 }
 
 .business-card-wrapper {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .business-card {
@@ -247,7 +263,7 @@ Category page
   display: block;
   width: 100%;
   height: 12rem;
-  padding: 1rem;
+  padding: 1.5rem;
   color: #ffffff;
   border-radius: 0.5rem;
   background-size: cover;
@@ -276,7 +292,7 @@ Category page
 }
 
 .business-card .business-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .business-card .business-content {
@@ -294,14 +310,24 @@ Category page
   align-items: center;
 }
 
-.business-card .business-city {
+.business-card .business-category {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1;
 }
 
-.business-card .business-street {
+.business-card .business-city {
   line-height: 1.2;
+}
+
+.business-loadmore {
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  text-decoration: underline;
+}
+
+.business-empty {
+  padding-bottom: 2.5rem;
 }
 
 /*--------------------------

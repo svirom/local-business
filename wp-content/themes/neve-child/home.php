@@ -41,8 +41,14 @@ get_header();
 
         <div class="row">
           <?php $categories = get_categories(array('hide_empty' => false));
+            $category_count = 0;
             foreach($categories as $category) {
               if ( $category->slug != 'uncategorized' ) {; ?>
+                <?php $i++; 
+                  if ($i > 8) { 
+                    break;
+                  }
+                ?>
                 <div class="col-sm-6 col-md-3 category-card-wrapper">
                   <div class="category-card">
                     <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->cat_name; ?></a>

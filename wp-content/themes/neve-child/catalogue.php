@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying category pages
+ * Template Name: Catalogue Page
  *
  * @package Neve
  */
@@ -14,12 +14,12 @@ get_header();
   <div class="<?php echo esc_attr( $container_class ); ?> archive-container">
 
   <?php 
-    $category = get_category( get_query_var( 'cat' ) );
+    // $category = get_category( get_query_var( 'cat' ) );
 
     $loop_places = new WP_Query( 
       array( 
       'post_type' => 'places',
-      'cat' => $category->cat_ID,   
+      // 'cat' => $category->cat_ID,   
       'posts_per_page' => -1
       ) 
     );
@@ -27,12 +27,26 @@ get_header();
 
 		<div class="row category-title">
       <div class="col-12 container-home text-center">
-        <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
+        <h1 class="page-title"><?php echo __( 'Каталог закладів', 'neve' ); ?></h1>
       </div>
 		</div>
 
     <div class="row container-home-wrapper">
       <div class="col-12 container-home">
+
+        <div class="row">
+          <?php $categories = get_categories(array('hide_empty' => false));
+            foreach($categories as $category) {
+              if ( $category->slug != 'uncategorized' ) {; ?>
+                <div class="col-sm-6 col-md-3 category-card-wrapper">
+                  <div class="category-card">
+                    <a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->cat_name; ?></a>
+                  </div>
+                </div>
+              <?php }  
+            }
+          ?>
+        </div>
 
         <?php  @require get_stylesheet_directory() .'/content-parts/map.php'; ?>
 
