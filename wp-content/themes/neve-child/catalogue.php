@@ -18,9 +18,8 @@ get_header();
 
     $loop_places = new WP_Query( 
       array( 
-      'post_type' => 'places',
-      // 'cat' => $category->cat_ID,   
-      'posts_per_page' => -1
+      'post_type' => 'places',   
+      'posts_per_page' => 1
       ) 
     );
   ?>
@@ -70,13 +69,19 @@ get_header();
                 </a>
               </div>
             <?php endwhile; ?>
-            
-              <div class="w-100"></div>
-              <div class="col-12 text-center business-loadmore">
-                <h5>
-                  <a href="#" class="btn btn-link"><?php echo __('Показати ще', 'neve') ?></a>
-                </h5>
+
+            <!-- ajax load posts -->
+            <?php if (  $loop_places->max_num_pages > 1 ) { ?>
+              <script>
+                var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                var true_posts = '<?php echo serialize($loop_places->query_vars); ?>';
+                var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                var max_pages = '<?php echo $loop_places->max_num_pages; ?>';
+              </script>
+              <div id="true_loadmore" class="col-12 w-100 text-center business-loadmore">
+                <a href="#" class="btn btn-link"><?php echo __('Показати ще', 'neve') ?></a>
               </div>
+            <?php } ?>
 
           <?php else : ?>
             <div class="col-12 text-center business-empty">

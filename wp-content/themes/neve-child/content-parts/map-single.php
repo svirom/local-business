@@ -1,32 +1,13 @@
-<?php 
-  
-  // for correct displaying on category map (all places) when using ajax loading
-  $category = get_category( get_query_var( 'cat' ) );
-  $loop_places_map = new WP_Query( 
-    array( 
-    'post_type' => 'places',
-    'cat' => $category->cat_ID,   
-    'posts_per_page' => -1
-    ) 
-  );
+<?php
 
-  $locations_arr = [];
+  $lat = get_field('coord_lattitude');
+  $long = get_field('coord_longitude');
+  $post_title = $post->post_title;
+  $post_url = get_post_permalink($post);
 
-  while ( $loop_places_map->have_posts() ) : $loop_places_map->the_post();
-    // print_r($post);
-    $arr_el = [];
-    array_push($arr_el, $post->post_title);
-    array_push($arr_el, get_field('coord_lattitude'));
-    array_push($arr_el, get_field('coord_longitude'));
-    array_push($arr_el, get_post_permalink($post));
-    
-    settype($arr_el[1], 'float');
-    settype($arr_el[2], 'float');
+  settype($lat, 'float');
+  settype($long, 'float');
 
-    array_push($locations_arr, $arr_el);
-  endwhile;
-
-  // var_dump($arr);
 ?>
 
 <div class="row">
@@ -35,8 +16,13 @@
     <div id="map"></div>
     <script>
       var map, infoWindow;
+      var lat = <?php echo json_encode( $lat ); ?>;
+      var long = <?php echo json_encode( $long ); ?>;
+      var post_title = <?php echo json_encode( $post_title ); ?>;
+      var post_url = <?php echo json_encode( $post_url ); ?>;
+
       function initMap() {
-        var kyiv = {lat: 50.45466, lng: 30.5238};
+        var place_position = {lat: lat, lng: long};
 
         var map_styles = [
             {
@@ -257,73 +243,33 @@
         map = new google.maps.Map(
           document.getElementById('map'), {
             zoom: 12, 
-            center: kyiv,
+            center: place_position,
             styles: map_styles
         });
 
         infoWindow = new google.maps.InfoWindow;
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
+        var web = post_url !== '' ? '<a href="'+post_url+'">'+post_title+'</a>' : post_title;
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
+        var contentString = '<div class="info-window">' + web + '</div>';
 
-        setMarkers(map);
-      }
+        var marker = new google.maps.Marker({
+          position: {lat: lat, lng: long},
+          map: map,
+          title: post_title,
+          info: contentString
+        });
+        
+        var infowindow = new google.maps.InfoWindow({
+          //content: contentString
+        });
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        /*infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');*/
-        //infoWindow.open(map);  
-      }
-    
-      var locations = <?php echo json_encode( $locations_arr ); ?>;
+        marker.addListener('click', function() {
+          // infowindow.open(map, marker);
+          infowindow.setContent( this.info );	   
+          infowindow.open( map, this );
+        });
 
-      function setMarkers(map) {
-
-        for (var i = 0; i < locations.length; i++) {
-          var location = locations[i];
-
-          var web = location[3] != '' ? '<a href="'+location[3]+'">'+location[0]+'</a>' : location[0];
-
-          var contentString = '<div class="info-window">' + web + '</div>';
-
-          var marker = new google.maps.Marker({
-            position: {lat: location[1], lng: location[2]},
-            map: map,
-            title: location[0],
-            info: contentString
-          });
-          
-          var infowindow = new google.maps.InfoWindow({
-            //content: contentString
-          });
-          marker.addListener('click', function() {
-            // infowindow.open(map, marker);
-            infowindow.setContent( this.info );	   
-            infowindow.open( map, this );
-          }); 
-          // marker.addListener('mouseout', function() {	   
-          //   infowindow.close( map, this );
-          // });
-        }
       }
 
     </script>

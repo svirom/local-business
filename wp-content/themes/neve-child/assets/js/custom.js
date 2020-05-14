@@ -2,7 +2,7 @@ jQuery(function($) {
   $(document).ready(function() {
 
     // smooth scroll anchor #
-		$('a[href^="#"]').bind('click.smoothscroll', function(e) {
+		$('.btn-hash').bind('click.smoothscroll', function(e) {
 			$target = $(this.hash);
 			e.preventDefault();
 	

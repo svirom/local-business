@@ -26,11 +26,10 @@ This plugin enables the insertion of google maps into contact form 7 as an input
 
 * [CF7 Polylang Module](https://wordpress.org/plugins/cf7-polylang/) - this plugin allows you to create forms in different languages for a multi-language website.  The plugin requires the [Polylang](https://wordpress.org/plugins/polylang/) plugin to be installed in order to manage translations.
 
-* [CF7 Multi-slide Module](https://wordpress.org/plugins/cf7-multislide/) - this plugin allows you to build a multi-step form using a slider.  Each slide has cf7 form which are linked together and submitted as a single form.
+* [Smart Grid-layout Extension for CF7 ](https://wordpress.org/plugins/cf7-grid-layout/) - this plugin fixes amny shortcomings of the CF7 plugin, most importantly it allows you to build a grid-layout (multi-row/multi-column) responsive form among many other useful functionality.
 
 * [Post My CF7 Form](https://wordpress.org/plugins/post-my-contact-form-7/) - this plugin allows you to save you cf7 form submissions to a custom post, map your fields to meta fields or taxonomy.  It also allows you to pre-fill fields before your form  is displayed.
 
-* [CF7 Google Map](https://wordpress.org/plugins/cf7-google-map/) - allows google maps to be inserted into a Contact Form 7.  Unlike other plugins, this one allows map settings to be done at the form level, enabling diverse maps to be configured for each forms.
 
 == Installation ==
 
@@ -97,6 +96,21 @@ this will create a link to a map centered on the coordinates with a location pin
   })(jQuery)
 </script>
 `
+If you are using the address mail tag in your mail notification, and want your users to modify the address displayed through your custom fields, then it is important that you fire a similar event as the one above on the map container.  This will notify the plugin to update the complete address field which will be used to populate the mail tag,
+
+`
+$('p#line input, p#city input, p#pincode input').on('change', function(){
+  var event = $.Event("update.cf7-google-map", {
+      'address': {
+        'line': '', /*insert the first line here*/
+        'city': '', /*insert the city here*/
+        'state': '',/*insert the state here*/
+        'country': ''/*insert the country here*/
+      },bubbles: true,cancelable: true});
+  /*NOTE: it is not important how many details you enter, only the values will be submitted in the same order.*/
+  $('.cf7-google-map-container').trigger(event);
+}
+`
 = 6. How can I customise the display of the address in the notification mail? =
 
 if you include the address mail tag [address-<your-field>] into the notification mail body, it will be by default displayed with each field on a new line.  If you need to change this, hook the following filter,
@@ -110,41 +124,55 @@ function change_address_format($formatted_address, $address, $field){
   return $formatted_address;
 }
 `
-= 7.can I use custom address fields in my form instead of the default setup by the plugin? =
+= 7. Can I change the default map settings ? =
 
-Yes you can.  Each time the address if updated (marker moved, or select a searched location), a javascript event is fired on the map container element,
+yes, you can using the following hook you can filter the map type (set to ROADMAP by default),
 
-`
-$('.cf7-google-map-container').on('update.cf7-google-map',function(event){
-  var addressObject = event.address;
-  /* update your own fields with the address object provided. */
-  /* address object is formatted as:
-    {
-      line: '',
-      state:'',
-      pin: '',
-      city:'',
-      country:''
-    }
-  */
-});
-`
+`add_filter('cf7_google_map_default_type', 'change_map_type', 10,2);
+function change_map_type($type, $field){
+  //type must be either ROADMAP/SATELLITE/TERRAIN/HYBRID.
+  if('your-location' ==$field) $type = 'SATELLITE';
+  return $type;
+}`
 
-Catch this event and updated your own custom fields.  If you are using the address mail tag in your mail notification, and want your users to modify the address displayed through your custom fields, then it is important that you fire a similar event as the one above on the map container.  This will notify the plugin to update the complete address field which will be used to populate the mail tag,
+you can disable/enable map controls,
 
-`
-$('#my-custom-address-field').on('change', function(){
-  var event = $.Event("update.cf7-google-map", {
-      'address': {
-        'line': '', /*insert the first line here*/
-        'city': '', /*insert the city here*/
-        'state': '',/*insert the state here*/
-        'country': ''/*insert the country here*/
-      },bubbles: true,cancelable: true});
-  /*NOTE: it is not important how many details you enter, only the values will be submitted in the same order.*/
-  $('.cf7-google-map-container').trigger(event);
-}
-`
+`add_filter('cf7_google_map_settings', 'use_custom_map_settings',10,2);
+function use_custom_map_icon($settings, $field_name){
+  if( 'your-location' == $field_name ){
+    $settings['mapTypeControl']= false; //hide (true by default).
+    $settings['navigationControl']= false; //hide (true by default).
+    $settings['streetViewControl']= false; //hide (true by default).
+    $settings['zoomControl']=false; //hide (false by default).
+    $settings['rotateControl']=true; //show (false by default).
+    $settings['fullscreenControl']=true; //show (false by default).
+    $settings['rotateControl']= true; //show (false by default).
+    $settings['zoom']= 12; //set by default to the value initialised at the time of creating the form tag.
+    $settings['center'] = array('11.936825', '79.834278'); //set by default to the value initialised at the time of creating the form tag.
+
+  }
+  return $settings;
+}`
+
+you can filter the map marker's settings,
+
+`add_filter('cf7_google_map_marker_settings', 'use_custom_marker_settings',10,2);
+function use_custom_marker_settings($settings, $field_name){
+  if( 'your-location' == $field_name ){
+    $settings['icon'] = ... //set your image url here.
+    $settings['draggable'] = false; //true by default.
+    $settings['position'] = array('11.936825', '79.834278'); //set by default to the value initialised at the time of creating the form tag.
+
+  }
+  return $settings;
+}`
+
+
+= 9. Can I translate my address field labels ? =
+
+If you are using the built-in address fields provided by the plugin, you can change the labels of the fields usig the following hooks,
+
+
 == Screenshots ==
 1. Save your Google API key in the settings, else your map will not function
 2. Insert a Google Map tag into your cf7 form
@@ -155,6 +183,17 @@ $('#my-custom-address-field').on('change', function(){
 
 
 == Changelog ==
+=1.5.0=
+* move main google js script into separate file.
+* upgrade js to ES6.
+* add cf7_google_map_marker_settings filter.
+* add cf7_google_map_settings filter.
+=1.4.5=
+* fix search.
+* fix settings links.
+* fix search button position.
+=1.4.4=
+* fix ROADMAP filter.
 =1.4.3=
 * fix HTML map field markup.
 * updated settings to improve API key setup.
