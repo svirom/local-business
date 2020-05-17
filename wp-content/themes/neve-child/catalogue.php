@@ -26,7 +26,7 @@ get_header();
 
 		<div class="row category-title">
       <div class="col-12 container-home text-center">
-        <h1 class="page-title"><?php echo __( 'Каталог закладів', 'neve' ); ?></h1>
+        <h1 class="page-title"><?php echo __( 'Каталог закладів', 'neve-child' ); ?></h1>
       </div>
 		</div>
 
@@ -79,13 +79,13 @@ get_header();
                 var max_pages = '<?php echo $loop_places->max_num_pages; ?>';
               </script>
               <div id="true_loadmore" class="col-12 w-100 text-center business-loadmore">
-                <a href="#" class="btn btn-link"><?php echo __('Показати ще', 'neve') ?></a>
+                <a href="#" class="btn btn-link"><?php echo __('Показати ще', 'neve-child') ?></a>
               </div>
             <?php } ?>
 
           <?php else : ?>
             <div class="col-12 text-center business-empty">
-              <h3><?php echo __('Ваш заклад може бути першим', 'neve'); ?></h3>
+              <h3><?php echo __('Ваш заклад може бути першим', 'neve-child'); ?></h3>
             </div>
           <?php endif; ?>
 

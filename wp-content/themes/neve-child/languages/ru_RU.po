@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Local Business\n"
+"POT-Creation-Date: 2020-05-17 17:54+0300\n"
+"PO-Revision-Date: 2020-05-17 18:06+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e;esc_html__;"
+"esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;__ngettext:1,2;"
+"__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:14
+msgid "Схоже, що не вдалося знайти те, що ви шукаєте."
+msgstr "Кажется, не удалось найти то, что вы ищите."
+
+#: catalogue.php:29
+msgid "Каталог закладів"
+msgstr "Каталог заведений"
+
+#: catalogue.php:82 category.php:69
+msgid "Показати ще"
+msgstr "Показать еще"
+
+#: catalogue.php:88 category.php:75
+msgid "Ваш заклад може бути першим"
+msgstr "Ваше заведение может быть первым"
+
+#: content-parts/bottom-contact.php:6
+msgid "Проект створено за підтримки провайдера платіжних послуг iPay.ua"
+msgstr "Проект создан при поддержке провайдера платежных услуг iPay.ua"
+
+#: content-parts/bottom-contact.php:14
+msgid "За додатковою інформацією звертайтесь:"
+msgstr "За дополнительной информацией обращайтесь:"
+
+#: content-parts/bottom-form.php:4
+msgid "Додайте свій бізнес до нашого каталогу"
+msgstr "Добавьте свой бизнес в наш каталог"
+
+#: content-parts/bottom-form.php:5
+msgid ""
+"Розмістіть свій заклад на нашу мапу та отримайте додаткову можливість "
+"клієнтам дізнатися про ваші пропозиції."
+msgstr ""
+"Разместите свое заведение на нашей карте и получите дополнительную "
+"возможность клиентам узнать о ваших предложениях."
+
+#: content-parts/bottom-form.php:7
+msgid "Заповнити анкету"
+msgstr "Заполнить анкету"
+
+#: content-parts/header-home.php:6
+msgid "Підтримай місцевий бізнес"
+msgstr "Поддержи местный бизнес"
+
+#: content-parts/header-home.php:7
+msgid ""
+"Шукайте на карті улюблені заклади поруч з вами та дізнавайтеся як їх можна "
+"підтримати: замовити доставку або ж придбати онлайн сертифікат, який пізніше "
+"можна буде обміняти на товари та послуги."
+msgstr ""
+"Ищите на карте любимые заведения рядом с вами и узнавайте как их можно "
+"поддержать: заказать доставку или же приобрести онлайн сертификат, который "
+"позже можно будет обменять на товары и услуги"
+
+#: content-parts/header-home.php:9
+msgid "Подивитись на мапі"
+msgstr "Посмотреть на карте"
+
+#: content-parts/header-home.php:10
+msgid "Додати свій заклад"
+msgstr "Добавить свое заведение"
+
+#: home.php:23
+msgid "Шукайте на мапі"
+msgstr "Ищите на карте"
+
+#: home.php:38
+msgid "або ознайомтесь з каталогом закладів"
+msgstr "или ознакомтесь с каталогом заведений"
+
+#: home.php:65
+msgid "Переглянути усі категорії"
+msgstr "Посмотреть все категории"
+
+#: inc/custom-post-type.php:17 inc/custom-post-type.php:19
+msgid "Заклади"
+msgstr "Заведения"
+
+#: inc/custom-post-type.php:18
+msgid "Заклад"
+msgstr "Заведение"
+
+#: inc/custom-post-type.php:20
+msgid "Усі заклади"
+msgstr "Все заведения"
+
+#: inc/custom-post-type.php:21
+msgid "Додати новий"
+msgstr "Добавить новое"
+
+#: inc/custom-post-type.php:22
+msgid "Додати новий заклад"
+msgstr "Добавить новое заведение"
+
+#: inc/custom-post-type.php:23
+msgid "Редагувати"
+msgstr "Редактировать"
+
+#: inc/custom-post-type.php:24
+msgid "Редагувати заклад"
+msgstr "Редактировать заведение"
+
+#: inc/custom-post-type.php:25
+msgid "Новий заклад"
+msgstr "Новое заведение"
+
+#: inc/custom-post-type.php:26 inc/custom-post-type.php:27
+msgid "Дивитись заклад"
+msgstr "Смотреть заведение"
+
+#: inc/custom-post-type.php:28
+msgid "Шукати заклад"
+msgstr "Искать заведение"
+
+#: inc/custom-post-type.php:29
+msgid "Заклад не знайдено"
+msgstr "Заведение не найдено"
+
+#: inc/custom-post-type.php:30
+msgid "Немає закладу у кошику"
+msgstr "Нет заведения в корзине"
+
+#: single-places.php:27 single-places.php:100
+msgid "Місто"
+msgstr "Город"
+
+#: single-places.php:28 single-places.php:101
+msgid "Адреса"
+msgstr "Адрес"
+
+#: single-places.php:40
+msgid "Придбати сертифікат"
+msgstr "Приобрести сертификат"
+
+#: single-places.php:46 single-places.php:47 single-places.php:48
+msgid "Сертифікат на"
+msgstr "Сертификат на"
+
+#: single-places.php:46 single-places.php:47 single-places.php:48
+msgid "грн"
+msgstr "грн"
+
+#: single-places.php:51 single-places.php:79
+msgid "Придбати"
+msgstr "Приобрести"
+
+#: single-places.php:53
+msgid "Додаючи заклад ви погоджуєтесь з умовами"
+msgstr "Добавляя заведение вы соглашаетесь с условиями"
+
+#: single-places.php:53
+msgid "оферти"
+msgstr "оферты"
+
+#: single-places.php:60
+msgid "Інші пропозиції"
+msgstr "Другие предложения"
+
+#: single-places.php:77
+msgid "грн."
+msgstr "грн."
+
+#: single-places.php:102
+msgid "Телефон"
+msgstr "Телефон"
+
+#: single-places.php:104
+msgid "Сайт"
+msgstr "Сайт"
+
+#: single-places.php:105
+msgid "Час роботи"
+msgstr "Время работы"

@@ -20,7 +20,7 @@ get_header();
 
         <div class="row">
           <div class="col-12 text-center map-title" id="map-title">
-            <h3><?php echo __('Шукайте на мапі', 'neve') ?></h3>
+            <h3><?php echo __('Шукайте на мапі', 'neve-child') ?></h3>
           </div>
         </div>
         <?php 
@@ -35,7 +35,7 @@ get_header();
 
         <div class="row">
           <div class="col-12 text-center">
-            <h4><?php echo __('або ознайомтесь з каталогом закладів', 'neve') ?></h4>
+            <h4><?php echo __('або ознайомтесь з каталогом закладів', 'neve-child') ?></h4>
           </div>
         </div>
 
@@ -62,7 +62,7 @@ get_header();
         <div class="row">
           <div class="col-12 text-center all-categories">
             <h5>
-              <a href="<?php echo site_url().'/catalogue'?>" class="btn btn-link"><?php echo __('Переглянути усі категорії', 'neve'); ?></a>
+              <a href="<?php echo site_url().'/catalogue'?>" class="btn btn-link"><?php echo __('Переглянути усі категорії', 'neve-child'); ?></a>
             </h5>
           </div>
         </div>

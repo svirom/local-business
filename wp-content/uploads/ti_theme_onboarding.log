@@ -1,19 +1,26 @@
-[13/May/2020:19:16:38] (ℹ️): WordPress Instance Info:
-[13/May/2020:19:16:38] (ℹ️): Home URL : http://local-business.local
-[13/May/2020:19:16:38] (ℹ️): Site URL : http://local-business.local
-[13/May/2020:19:16:38] (ℹ️): WordPress Version : 5.4
-[13/May/2020:19:16:38] (ℹ️): Onboarding Version : 1.8.2
-[13/May/2020:19:16:38] (ℹ️): Multisite : No
-[13/May/2020:19:16:38] (ℹ️): Server Info : Apache/2.4.41 (Win64) PHP/7.2.25
-[13/May/2020:19:16:38] (ℹ️): PHP Version : 7.2.25
-[13/May/2020:19:16:38] (ℹ️): HTTPS : No
-[13/May/2020:19:16:38] (ℹ️): PHP Max Execution Time : 120
-[13/May/2020:19:16:38] (ℹ️): PHP Max Input Vars : 2500
-[13/May/2020:19:16:38] (ℹ️): Max Upload Size : 2097152
-[13/May/2020:19:16:38] (ℹ️): Plugins:
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Advanced Custom Fields: Repeater Field : v2.1.0 (Elliot Condon)
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Advanced CF7 DB : v1.7.2 (Vsourz Digital)
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Додаткові поля Pro : v5.8.9 (Elliot Condon)
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Google Map for Contact Form 7 : v1.4.3 (Aurovrata V.)
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Contact Form 7 : v5.1.7 (Takayuki Miyoshi)
-[13/May/2020:19:16:38] (ℹ️): [PLUGIN] Cyr-To-Lat : v4.4.0 (Сергій Бірюков, Михайло Кобзаров, Ігор Гергель)
+[17/May/2020:19:38:24] (ℹ️): WordPress Instance Info:
+[17/May/2020:19:38:24] (ℹ️): Home URL : http://local-business.local
+[17/May/2020:19:38:24] (ℹ️): Site URL : http://local-business.local
+[17/May/2020:19:38:24] (ℹ️): WordPress Version : 5.4
+[17/May/2020:19:38:24] (ℹ️): Onboarding Version : 1.8.2
+[17/May/2020:19:38:24] (ℹ️): Multisite : No
+[17/May/2020:19:38:24] (ℹ️): Server Info : Apache/2.4.41 (Win64) PHP/7.2.25
+[17/May/2020:19:38:24] (ℹ️): PHP Version : 7.2.25
+[17/May/2020:19:38:24] (ℹ️): HTTPS : No
+[17/May/2020:19:38:24] (ℹ️): PHP Max Execution Time : 120
+[17/May/2020:19:38:24] (ℹ️): PHP Max Input Vars : 2500
+[17/May/2020:19:38:24] (ℹ️): Max Upload Size : 8388608
+[17/May/2020:19:38:24] (ℹ️): Plugins:
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] WPML Multilingual CMS : v4.3.12 (OnTheGoSystems)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Advanced Custom Fields: Repeater Field : v2.1.0 (Elliot Condon)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Advanced Custom Fields Multilingual : v1.6.1 (OnTheGoSystems)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Advanced CF7 DB : v1.7.2 (Vsourz Digital)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Додаткові поля Pro : v5.8.11 (Elliot Condon)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Google Map for Contact Form 7 : v1.5.0 (Aurovrata V.)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Contact Form 7 Multilingual : v1.0.2 (OnTheGoSystems)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Contact Form 7 : v5.1.7 (Takayuki Miyoshi)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Cyr-To-Lat : v4.4.0 (Сергій Бірюков, Михайло Кобзаров, Ігор Гергель)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] Listo : v1.2.2 (Takayuki Miyoshi)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] WPML Media : v2.5.5 (OnTheGoSystems)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] WPML String Translation : v3.0.9 (OnTheGoSystems)
+[17/May/2020:19:38:24] (ℹ️): [PLUGIN] WPML Translation Management : v2.9.6 (OnTheGoSystems)

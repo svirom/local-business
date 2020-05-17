@@ -62,7 +62,8 @@ Header home
   background-color: #ffc42e;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
   background-color: #bb9637;
 }
 
@@ -345,10 +346,22 @@ Category page
 
 @keyframes rotate {
   0% {
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
     transform: rotate(0);
   }
   100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
   }
 }
 
@@ -399,10 +412,18 @@ Single place page
   margin: 3rem auto 4.5rem;
 }
 
-.single-article-footer {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.certificate-add {
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.certificate-oferta {
+  margin-top: 2rem;
+}
+
+.single-article-footer {
+  padding: 3rem 1rem;
 }
 
 .single-article-footer > .row {
@@ -568,9 +589,17 @@ Add Place Page
   width: 100%;
 }
 
+.certificate-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
 .wpcf7-form input.wpcf7-form-control:not(.btn),
 .wpcf7-form textarea.wpcf7-form-control,
-.wpcf7-form select.wpcf7-form-control {
+.wpcf7-form select.wpcf7-form-control,
+.certificate-form select.certificate-amount {
   width: calc(100% - 40px);
   margin-bottom: 0;
   padding: 10px 20px;
@@ -591,8 +620,15 @@ Add Place Page
   height: 100px;
 }
 
-.wpcf7-form select {
+.wpcf7-form select,
+.certificate-form select {
   height: auto;
+}
+
+.certificate-form select.certificate-amount {
+  width: auto;
+  margin-right: 2rem;
+  background-color: #ffffff;
 }
 
 input:not([type=checkbox]):not([type=radio]), 
@@ -603,7 +639,7 @@ textarea {
 .wpcf7-form input:focus, 
 .wpcf7-form textarea:focus,
 .wpcf7-form select:focus {
-  border-color: #3f48c4;
+  /* border-color: #3f48c4; */
   background-color: #fff;
   outline: none;
   -webkit-box-shadow: none !important;
@@ -620,6 +656,13 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
+  .certificate-form {
+    flex-direction: column;
+  }
+  .certificate-form select.certificate-amount {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
   .form-label label,
   .form-label.form-label-radio {
     text-align: left;
@@ -646,4 +689,9 @@ textarea {
   margin-top: 4rem;
   font-size: 1.25rem;
   text-align: center;
+}
+
+
+#secondary-menu {
+  flex-wrap: nowrap;
 }

@@ -14,20 +14,20 @@ function create_post_type_places()
 	register_post_type('places', // Register Custom Post Type
 		array(
 		'labels' => array(
-			'name' => __('Заклади', 'understrap'), // Rename these to suit
-			'singular_name' => __('Заклад', 'understrap'),
-			'menu_name' => __('Заклади', 'understrap'),
-			'all_items' => __('Усі заклади', 'understrap'),
-			'add_new' => __('Додати новий', 'understrap'),
-			'add_new_item' => __('Додати новий заклад', 'understrap'),
-			'edit' => __('Редагувати', 'understrap'),
-			'edit_item' => __('Редагувати заклад', 'understrap'),
-			'new_item' => __('Новий заклад', 'understrap'),
-			'view' => __('Дивитись заклад', 'understrap'),
-			'view_item' => __('Дивитись заклад', 'understrap'),
-			'search_items' => __('Шукати заклад', 'understrap'),
-			'not_found' => __('Заклад не знайдено', 'understrap'),
-			'not_found_in_trash' => __('Немає закладу у кошику', 'understrap')
+			'name' => __('Заклади', 'neve-child'), // Rename these to suit
+			'singular_name' => __('Заклад', 'neve-child'),
+			'menu_name' => __('Заклади', 'neve-child'),
+			'all_items' => __('Усі заклади', 'neve-child'),
+			'add_new' => __('Додати новий', 'neve-child'),
+			'add_new_item' => __('Додати новий заклад', 'neve-child'),
+			'edit' => __('Редагувати', 'neve-child'),
+			'edit_item' => __('Редагувати заклад', 'neve-child'),
+			'new_item' => __('Новий заклад', 'neve-child'),
+			'view' => __('Дивитись заклад', 'neve-child'),
+			'view_item' => __('Дивитись заклад', 'neve-child'),
+			'search_items' => __('Шукати заклад', 'neve-child'),
+			'not_found' => __('Заклад не знайдено', 'neve-child'),
+			'not_found_in_trash' => __('Немає закладу у кошику', 'neve-child')
 		),
 		'menu_icon' => 'dashicons-admin-multisite',
 		'public' => true,

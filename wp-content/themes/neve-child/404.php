@@ -11,7 +11,7 @@ get_header();
 	<div class="row container-place-wrapper">
 		<div class="nv-single-page-wrap col-12 container-home">
       <div class="nv-content-none-wrap">
-        <p>Схоже, що не вдалося знайти те, що ви шукаєте.</p>
+        <p><?php echo __('Схоже, що не вдалося знайти те, що ви шукаєте.', 'neve-child'); ?></p>
       </div>
 		</div>
 	</div>

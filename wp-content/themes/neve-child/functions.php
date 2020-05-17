@@ -65,3 +65,16 @@ class Listo_Categories implements Listo {
 
 	public static function groups(){}
 }
+
+add_action('after_setup_theme', 'true_load_theme_textdomain');
+function true_load_theme_textdomain(){
+    load_child_theme_textdomain( 'lang', get_stylesheet_directory_uri() . '/languages' );
+}
+
+/*add_filter( 'locale', 'true_localize_theme' );
+function true_localize_theme( $locale ) {
+    if ( isset( $_GET['lang'] ) ) {
+        return esc_attr( $_GET['lang'] );
+    }
+    return $locale;
+}*/
