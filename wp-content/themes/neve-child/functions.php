@@ -78,3 +78,7 @@ function true_localize_theme( $locale ) {
     }
     return $locale;
 }*/
+
+// define language of current page
+global $curr_lang;
+$curr_lang = ICL_LANGUAGE_CODE;

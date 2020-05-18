@@ -7,6 +7,17 @@
 
 $container_class = apply_filters( 'neve_container_class_filter', 'container', 'blog-archive' );
 
+global $curr_lang;
+
+if ( $curr_lang == 'ru' ) {
+  $catalogue = '/ru/catalogue';
+} else if ( $curr_lang == 'en' ) {
+  $catalogue = '/en/catalogue';
+} else {
+  $catalogue = '/catalogue';
+}
+
+
 get_header();
 
 ?>
@@ -62,7 +73,7 @@ get_header();
         <div class="row">
           <div class="col-12 text-center all-categories">
             <h5>
-              <a href="<?php echo site_url().'/catalogue'?>" class="btn btn-link"><?php echo __('Переглянути усі категорії', 'neve-child'); ?></a>
+              <a href="<?php echo site_url() . $catalogue; ?>" class="btn btn-link"><?php echo __('Переглянути усі категорії', 'neve-child'); ?></a>
             </h5>
           </div>
         </div>

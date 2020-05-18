@@ -8,7 +8,7 @@ Description:    Neve is a super fast, easily customizable, multi-purpose theme. 
 Version:        1.0.0
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:    neve
+Text Domain:    neve-child
 Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready, wide-blocks, block-styles
 */
 
@@ -691,7 +691,14 @@ textarea {
   text-align: center;
 }
 
-
+/*--------------------------
+Language switcher
+--------------------------*/
 #secondary-menu {
   flex-wrap: nowrap;
+}
+
+.builder-item--secondary-menu #secondary-menu li.menu-item-language-current > a {
+  font-weight: 600;
+  text-decoration: underline;
 }
