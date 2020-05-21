@@ -82,3 +82,27 @@ function true_localize_theme( $locale ) {
 // define language of current page
 global $curr_lang;
 $curr_lang = ICL_LANGUAGE_CODE;
+
+// shortcode for Contact form 7 (string with link to oferta)
+function oferta_cf7_func() {
+	global $curr_lang;
+
+	if ( $curr_lang == 'uk' ) {
+		$oferta = '/oferta';
+	} else if ( $curr_lang == 'ru' ) {
+		$oferta = '/ru/oferta';
+	} else if ( $curr_lang == 'en' ) {
+		$oferta = '/en/oferta';
+	} else {
+		$oferta = '/oferta';
+	} 
+
+	$text_conditions = __('Додаючи заклад ви погоджуєтесь з умовами', 'neve-child');
+	$text_url = site_url() . $oferta;
+	$text_oferta = __('оферти', 'neve-child');
+
+	$html = "<p>$text_conditions <a href='$text_url'>$text_oferta</a></p>";
+
+	return $html;
+}
+wpcf7_add_shortcode('oferta', 'oferta_cf7_func');
