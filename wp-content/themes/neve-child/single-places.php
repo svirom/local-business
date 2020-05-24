@@ -8,6 +8,18 @@
 
 $container_class = apply_filters( 'neve_container_class_filter', 'container', 'single-post' );
 
+global $curr_lang;
+
+	if ( $curr_lang == 'uk' ) {
+		$oferta = '/oferta';
+	} else if ( $curr_lang == 'ru' ) {
+		$oferta = '/ru/oferta';
+	} else if ( $curr_lang == 'en' ) {
+		$oferta = '/en/oferta';
+	} else {
+		$oferta = '/oferta';
+	} 
+
 get_header();
 
 ?>
@@ -35,57 +47,61 @@ get_header();
 						</div>
 					</div>
 
-					<div class="row certificate-add">
-						<div class="col-12 container-home">
-							<h3><?php echo __('Придбати сертифікат', 'neve-child'); ?></h3>
-						</div>
-						<div class="col-12">
-							<form action="" class="certificate-form" method="post">
-								<div class="form-group">
-									<select class="form-control certificate-amount" name="certificate-amount">
-										<option value="200"><?php echo __('Сертифікат на', 'neve-child'); ?> 200 <?php echo __('грн', 'neve-child'); ?></option>
-										<option value="500"><?php echo __('Сертифікат на', 'neve-child'); ?> 500 <?php echo __('грн', 'neve-child'); ?></option>
-										<option value="1000"><?php echo __('Сертифікат на', 'neve-child'); ?> 1000 <?php echo __('грн', 'neve-child'); ?></option>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-primary"><?php echo __('Придбати', 'neve-child'); ?></button>
-							</form>
-							<p class="certificate-oferta"><?php echo __('Додаючи заклад ви погоджуєтесь з умовами', 'neve-child'); ?> <a href="#"><?php echo __('оферти', 'neve-child'); ?></a></p>
-						</div>
-					</div>
-
-					<footer class="single-article-footer container">
-						<div class="row">
+					<?php if (get_field('certificate_show')) {?>
+						<div class="row certificate-add">
+							<div class="col-12 container-home">
+								<h3><?php echo __('Придбати сертифікат', 'neve-child'); ?></h3>
+							</div>
 							<div class="col-12">
-								<h3><?php echo __('Інші пропозиції', 'neve-child'); ?></h3>
+								<form action="" class="certificate-form" method="post">
+									<div class="form-group">
+										<select class="form-control certificate-amount" name="certificate-amount">
+											<option value="200"><?php echo __('Сертифікат на', 'neve-child'); ?> 200 <?php echo __('грн', 'neve-child'); ?></option>
+											<option value="500"><?php echo __('Сертифікат на', 'neve-child'); ?> 500 <?php echo __('грн', 'neve-child'); ?></option>
+											<option value="1000"><?php echo __('Сертифікат на', 'neve-child'); ?> 1000 <?php echo __('грн', 'neve-child'); ?></option>
+										</select>
+									</div>
+									<button type="submit" class="btn btn-primary"><?php echo __('Придбати', 'neve-child'); ?></button>
+								</form>
+								<p class="certificate-oferta"><?php echo __('Додаючи заклад ви погоджуєтесь з умовами', 'neve-child'); ?> <a href="<?php echo site_url() . $oferta; ?>"><?php echo __('оферти', 'neve-child'); ?></a></p>
 							</div>
 						</div>
-						<div class="row certificate-cards">
-						<?php
-							// var_dump(get_fields());
-							$single_fields = get_fields();
-							foreach($single_fields as $single_field) {
-								if (is_array($single_field)) {
-									foreach($single_field as $cert) {	?>
-										<div class="col-md-3">
-											<div class="certificate-card" style="background-color: <?php echo $cert['certificate_background']; ?>">
-												<div class="certificate-body">
-													<h3 class="certificate-title"><?php echo $cert['certificate_title']; ?></h3>
-													<p class="certificate-description"><?php echo $cert['certificate_description']; ?></p>
-												</div>
-												<div class="certificate-footer">
-													<p class="certificate-cost"><?php echo $cert['certificate_cost']; ?>  <?php echo __('грн.', 'neve-child'); ?></p>
-													<?php if (strlen($cert['certificate_order']) > 0) { ?>
-														<a class="certificate-order" href="<?php echo $cert['certificate_order']; ?>"><?php echo __('Придбати', 'neve-child'); ?></a>
-													<?php } ?>
+					<?php } ?>
+
+					<?php if (get_field('offers_show')) {?>
+						<footer class="single-article-footer container">
+							<div class="row">
+								<div class="col-12">
+									<h3><?php echo __('Інші пропозиції', 'neve-child'); ?></h3>
+								</div>
+							</div>
+							<div class="row certificate-cards">
+							<?php
+								// var_dump(get_fields());
+								$single_fields = get_fields();
+								foreach($single_fields as $single_field) {
+									if (is_array($single_field)) {
+										foreach($single_field as $cert) {	?>
+											<div class="col-md-3">
+												<div class="certificate-card" style="background-color: <?php echo $cert['certificate_background']; ?>">
+													<div class="certificate-body">
+														<h3 class="certificate-title"><?php echo $cert['certificate_title']; ?></h3>
+														<p class="certificate-description"><?php echo $cert['certificate_description']; ?></p>
+													</div>
+													<div class="certificate-footer">
+														<p class="certificate-cost"><?php echo $cert['certificate_cost']; ?>  <?php echo __('грн.', 'neve-child'); ?></p>
+														<?php if (strlen($cert['certificate_order']) > 0) { ?>
+															<a class="certificate-order" href="<?php echo $cert['certificate_order']; ?>"><?php echo __('Придбати', 'neve-child'); ?></a>
+														<?php } ?>
+													</div>
 												</div>
 											</div>
-										</div>
-									<?php }
-								}
-							} ?>
-						</div>
-					</footer><!-- .entry-footer -->
+										<?php }
+									}
+								} ?>
+							</div>
+						</footer><!-- .entry-footer -->
+					<?php } ?>
 				</article><!-- #post-## -->
 
 				<?php endwhile; // end of the loop. ?>
